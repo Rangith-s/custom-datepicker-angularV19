@@ -61,10 +61,10 @@ jobs:
           ng build        
         shell: /usr/bin/bash -e {0}
     
-      - name: Use Git Publish Subdir Action
+      - name: Publish dist to build branch
         uses: s0/git-publish-subdir-action@develop
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          REPO: self
-          BRANCH: build
-          FOLDER: dist/my-angular-app-v19 
+        with:
+          repo: Rangith-s/custom-datepicker-angularV19
+          branch: build
+          folder: dist/my-angular-app-v19
+          token: ${{ secrets.GH_TOKEN }}
