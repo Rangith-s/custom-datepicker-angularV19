@@ -64,7 +64,7 @@ jobs:
       - name: Publish dist to build branch
         uses: s0/git-publish-subdir-action@develop
         with:
-          repo: Rangith-s/custom-datepicker-angularV19
+          repo: self
           branch: build
           folder: dist/my-angular-app-v19
           token: ${{ secrets.GH_TOKEN }}
