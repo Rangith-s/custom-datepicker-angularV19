@@ -58,7 +58,7 @@ jobs:
           node --print "v8.getHeapStatistics().heap_size_limit"
           export NODE_OPTIONS="--max-old-space-size=16384"
           node --print "v8.getHeapStatistics().heap_size_limit"
-          ng build        
+          ng build --base-href=/custom-datepicker-angularV19/ --configuration=production
         shell: /usr/bin/bash -e {0}
     
       - name: Push
@@ -66,5 +66,5 @@ jobs:
         env:
           REPO: self
           BRANCH: build # The branch name where you want to push the assets
-          FOLDER: dist/my-angular-app-v19 # The directory where your assets are generated
+          FOLDER: dist/my-angular-app-v19/browser # The directory where your assets are generated
           MESSAGE: "Build: ({sha}) {msg}" # The commit message   
